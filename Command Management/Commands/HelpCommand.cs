@@ -1,39 +1,42 @@
-﻿public class HelpCommand : Command
+﻿namespace Hashy.Commands
 {
-    public HelpCommand() : base("help", "Get the list of all available commands.") { }
-
-    public override void ProcessCommand(string[] arguments, string line)
+    public class HelpCommand : Command
     {
-        string result = "Here is a full list of all available commands:\r\n";
+        public HelpCommand() : base("help", "Get the list of all available commands.") { }
 
-        foreach (Command command in Program.GetCommandManager().GetCommands())
+        public override void ProcessCommand(string[] arguments, string line)
         {
-            result += $"\r\n! {command.Name}";
-            string theArguments = "";
+            string result = "Here is a full list of all available commands:\r\n";
 
-            if (command.Arguments.Length != 0)
+            foreach (Command command in Program.GetCommandManager().GetCommands())
             {
-                foreach (string argument in command.Arguments)
+                result += $"\r\n! {command.Name}";
+                string theArguments = "";
+
+                if (command.Arguments.Length != 0)
                 {
-                    if (theArguments == "")
+                    foreach (string argument in command.Arguments)
                     {
-                        theArguments = $"<{argument}>";
+                        if (theArguments == "")
+                        {
+                            theArguments = $"<{argument}>";
+                        }
+                        else
+                        {
+                            theArguments += $" <{argument}>";
+                        }
                     }
-                    else
-                    {
-                        theArguments += $" <{argument}>";
-                    }
+
+                    result += $" {theArguments}";
                 }
 
-                result += $" {theArguments}";
+                if (command.Description != null)
+                {
+                    result += $" - {command.Description}";
+                }
             }
 
-            if (command.Description != null)
-            {
-                result += $" - {command.Description}";
-            }
+            Console.WriteLine(result);
         }
-
-        Console.WriteLine(result);
     }
 }

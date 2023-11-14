@@ -1,16 +1,19 @@
-﻿public class LoadWordlistCommand : Command
+﻿namespace Hashy.Commands
 {
-    public LoadWordlistCommand() : base("loadwordlist", "Load a new wordlist, by using the \"wordlist.txt\" file.") { }
-
-    public override void ProcessCommand(string[] arguments, string line)
+    public class LoadWordlistCommand : Command
     {
-        if (!File.Exists("wordlist.txt"))
-        {
-            Console.WriteLine("The file \"wordlist.txt\" does not exist.");
-            return;
-        }
+        public LoadWordlistCommand() : base("loadwordlist", "Load a new wordlist, by using the \"wordlist.txt\" file.") { }
 
-        Program.LoadWordlist();
-        Console.WriteLine($"Succesfully loaded your wordlist. Loaded words count: {Program.GetWordlistCount()}.");
+        public override void ProcessCommand(string[] arguments, string line)
+        {
+            if (!File.Exists("wordlist.txt"))
+            {
+                Console.WriteLine("The file \"wordlist.txt\" does not exist.");
+                return;
+            }
+
+            Program.LoadWordlist();
+            Console.WriteLine($"Succesfully loaded your wordlist. Loaded words count: {Program.GetWordlistCount()}.");
+        }
     }
 }

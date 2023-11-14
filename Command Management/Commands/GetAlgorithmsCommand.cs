@@ -1,18 +1,21 @@
-﻿public class GetAlgorithmsCommand : Command
+﻿namespace Hashy.Commands
 {
-    public GetAlgorithmsCommand() : base("getalgorithms", "Get the list of all available hashing algorithms.") { }
-
-    public override void ProcessCommand(string[] arguments, string line)
+    public class GetAlgorithmsCommand : Command
     {
-        string result = "Here is a full list of all available algorithms:\r\n";
-        int i = 0;
+        public GetAlgorithmsCommand() : base("getalgorithms", "Get the list of all available hashing algorithms.") { }
 
-        foreach (string algorithm in HashingUtils.GetAlgorithms())
+        public override void ProcessCommand(string[] arguments, string line)
         {
-            i++;
-            result += $"\r\n[{i}] {algorithm}";
-        }
+            string result = "Here is a full list of all available algorithms:\r\n";
+            int i = 0;
 
-        Console.WriteLine(result);
+            foreach (string algorithm in HashingUtils.GetAlgorithms())
+            {
+                i++;
+                result += $"\r\n[{i}] {algorithm}";
+            }
+
+            Console.WriteLine(result);
+        }
     }
 }

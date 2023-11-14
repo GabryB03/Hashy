@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gabriele Bologna\\Desktop\\Hashy\\Hashy\\Hashy.csproj",
+      "projectUniqueName": "C:\\Users\\Gabriele Bologna\\Desktop\\Computer\\Developing\\Hashy\\Hashy.csproj",
       "projectName": "Hashy",
-      "projectPath": "C:\\Users\\Gabriele Bologna\\Desktop\\Hashy\\Hashy\\Hashy.csproj",
+      "projectPath": "C:\\Users\\Gabriele Bologna\\Desktop\\Computer\\Developing\\Hashy\\Hashy.csproj",
       "packagesPath": "C:\\Users\\Gabriele Bologna\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gabriele Bologna\\Desktop\\Hashy\\Hashy\\obj\\",
+      "outputPath": "C:\\Users\\Gabriele Bologna\\Desktop\\Computer\\Developing\\Hashy\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Gabriele Bologna\\AppData\\Roaming\\NuGet\\NuGet.Config",

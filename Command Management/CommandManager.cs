@@ -1,4 +1,6 @@
-﻿public class CommandManager
+﻿using System.Reflection;
+
+public class CommandManager
 {
     private List<Command> _commands;
 
@@ -10,14 +12,23 @@
 
     private void InitializeCommands()
     {
-        _commands.Add(new HelpCommand());
+        // The best way!
+        string commandsNamespace = "Hashy.Commands";
+
+        IEnumerable<Type> commandTypes = Assembly.GetExecutingAssembly()
+            .GetTypes()
+            .Where(type => type.Namespace == commandsNamespace && type.IsSubclassOf(typeof(Command)));
+
+        _commands = commandTypes.Select(type => (Command)Activator.CreateInstance(type)).ToList();
+
+        /*_commands.Add(new HelpCommand());
         _commands.Add(new GenerateWordlistCommand());
         _commands.Add(new GenerateCompleteWordlistCommand());
         _commands.Add(new SetCharsCommand());
         _commands.Add(new GetCharsCommand());
         _commands.Add(new LoadWordlistCommand());
         _commands.Add(new GetAlgorithmsCommand());
-        _commands.Add(new GetHashCommand());
+        _commands.Add(new GetHashCommand());*/
     }
 
     private void ThrowUnrecognizedCommand()
