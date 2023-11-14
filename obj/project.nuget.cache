@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "pZYyBLO2oYk1Oc+F23d/r0IdD3gIrGezTO2EqzvQfe/pOAkbZDU+dyFtVy9A12gXIwiucAAj6nFhBNuGXGsJRg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Gabriele Bologna\\Desktop\\Hashy\\Hashy\\Hashy.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Gabriele Bologna\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.29\\microsoft.windows.sdk.net.ref.10.0.22621.29.nupkg.sha512"
+  ],
+  "logs": []
+}
